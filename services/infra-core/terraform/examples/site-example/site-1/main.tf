@@ -31,7 +31,6 @@ module "tenant_br-ne-1" {
   
 }
 
-# Site planejado
 module "site_br-ne-1" {
   source = "../../../modules/netbox_site"
   
