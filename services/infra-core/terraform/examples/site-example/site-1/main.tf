@@ -15,15 +15,13 @@ provider "netbox" {
   # NETBOX_SERVER_URL e NETBOX_API_TOKEN
 }
 
-# Module names br-ne-1
-
+# Local variables
 locals {
-  site_name = "Site Nordeste" 
-  tenant_name = "br-ne-1"
-  description = "Data center ${local.site_name} - Em planejamento"
-
+  tenant_name    = "br-ne-1"
+  site_name      = "Site Nordeste" 
+  description    = "Data center ${local.site_name} - Em planejamento"
+  qtd_rack_units = 22
 }
-
 
 module "tenant_br-ne-1" {
   source = "../../../modules/netbox_tenant"
