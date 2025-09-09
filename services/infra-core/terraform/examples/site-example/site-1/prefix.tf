@@ -1,12 +1,6 @@
-# Prefixos para o Site Nordeste
-# Este arquivo cria uma estrutura hierárquica de prefixos
-# Padrão: 10.0.x.0/16 (container pai) dividido em /21 (sub-redes)
 
 # Local variables para prefixos
 locals {
-  # Base fixa para todos os sites
-  base_network = "10.0"
-  
   # Container principal do site (pai)
   container_prefix = "${local.base_network}.0.0/16"
   
@@ -47,14 +41,7 @@ locals {
     "reserved_23"    = "${local.base_network}.248.0/21"  # Reservado 23 (248-255)
   }
   
-  # Sub-redes /26 dentro de cada /21 (apenas 4 por /21)
-  # Cada /26 tem 64 endereços (2^6)
-  # Exemplo para produção (${local.base_network}.8.0/21):
-  # - ${local.base_network}.8.0/26   (${local.base_network}.8.0 - ${local.base_network}.8.63)
-  # - ${local.base_network}.8.64/26  (${local.base_network}.8.64 - ${local.base_network}.8.127)
-  # - ${local.base_network}.8.128/26 (${local.base_network}.8.128 - ${local.base_network}.8.191)
-  # - ${local.base_network}.8.192/26 (${local.base_network}.8.192 - ${local.base_network}.8.255)
-  
+
   subnets_26 = {
     # Produção - 4 sub-redes /26
     "production_1" = "${local.base_network}.8.0/26"
@@ -142,6 +129,7 @@ module "prefix_production" {
   description = "Rede de produção para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_250.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -154,6 +142,7 @@ module "prefix_development" {
   description = "Rede de desenvolvimento para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_550.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -226,6 +215,7 @@ module "prefix_monitoring" {
   description = "Rede de monitoramento para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_100.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -240,6 +230,7 @@ module "prefix_production_1" {
   description = "Rede de produção 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_250.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -251,6 +242,7 @@ module "prefix_production_2" {
   description = "Rede de produção 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_250.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -262,6 +254,7 @@ module "prefix_production_3" {
   description = "Rede de produção 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_250.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -273,6 +266,7 @@ module "prefix_production_4" {
   description = "Rede de produção 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_250.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -285,6 +279,7 @@ module "prefix_development_1" {
   description = "Rede de desenvolvimento 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_550.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -296,6 +291,7 @@ module "prefix_development_2" {
   description = "Rede de desenvolvimento 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_550.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -307,6 +303,7 @@ module "prefix_development_3" {
   description = "Rede de desenvolvimento 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_550.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -318,6 +315,7 @@ module "prefix_development_4" {
   description = "Rede de desenvolvimento 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_550.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -555,6 +553,7 @@ module "prefix_monitoring_1" {
   description = "Rede de monitoramento 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_100.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -566,6 +565,7 @@ module "prefix_monitoring_2" {
   description = "Rede de monitoramento 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_100.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -577,6 +577,7 @@ module "prefix_monitoring_3" {
   description = "Rede de monitoramento 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_100.id
   tags        = [module.tag_iac_network.name]
 }
 
@@ -588,6 +589,7 @@ module "prefix_monitoring_4" {
   description = "Rede de monitoramento 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
+  vlan_id     = module.vlan_100.id
   tags        = [module.tag_iac_network.name]
 }
 

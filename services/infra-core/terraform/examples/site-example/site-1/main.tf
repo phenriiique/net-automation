@@ -21,6 +21,7 @@ locals {
   site_name      = "Site Nordeste" 
   description    = "Data center ${local.site_name} - Em planejamento"
   qtd_rack_units = 22
+  base_network   = "10.0"
 }
 
 module "tenant_br-ne-1" {
