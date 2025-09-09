@@ -45,6 +45,8 @@ output "tags" {
     tag_monitoring_name = module.tag_monitoring.name
     tag_infrastructure_id   = module.tag_infrastructure.id
     tag_infrastructure_name = module.tag_infrastructure.name
+    tag_iac_network_id      = module.tag_iac_network.id
+    tag_iac_network_name    = module.tag_iac_network.name
   }
 }
 
@@ -100,5 +102,129 @@ output "vlans" {
     vlan_552_id   = module.vlan_552.id
     vlan_552_name = module.vlan_552.name
     vlan_552_vid  = module.vlan_552.vid
+  }
+}
+
+# ====== PREFIXOS ======
+output "prefixes" {
+  description = "Informações dos Prefixos"
+  value = {
+    # Container principal
+    prefix_container_main_id   = module.prefix_container_main.id
+    prefix_container_main_prefix = module.prefix_container_main.prefix
+    
+    # Prefixos ativos
+    prefix_infrastructure_id   = module.prefix_infrastructure.id
+    prefix_infrastructure_prefix = module.prefix_infrastructure.prefix
+    prefix_production_id       = module.prefix_production.id
+    prefix_production_prefix   = module.prefix_production.prefix
+    prefix_development_id      = module.prefix_development.id
+    prefix_development_prefix  = module.prefix_development.prefix
+    prefix_staging_id          = module.prefix_staging.id
+    prefix_staging_prefix      = module.prefix_staging.prefix
+    prefix_dmz_id              = module.prefix_dmz.id
+    prefix_dmz_prefix          = module.prefix_dmz.prefix
+    prefix_management_id       = module.prefix_management.id
+    prefix_management_prefix   = module.prefix_management.prefix
+    prefix_storage_id          = module.prefix_storage.id
+    prefix_storage_prefix      = module.prefix_storage.prefix
+    prefix_backup_id           = module.prefix_backup.id
+    prefix_backup_prefix       = module.prefix_backup.prefix
+    prefix_monitoring_id       = module.prefix_monitoring.id
+    prefix_monitoring_prefix   = module.prefix_monitoring.prefix
+    
+    # Prefixos reservados
+    prefix_reserved_1_id       = module.prefix_reserved_1.id
+    prefix_reserved_1_prefix   = module.prefix_reserved_1.prefix
+    prefix_reserved_2_id       = module.prefix_reserved_2.id
+    prefix_reserved_2_prefix   = module.prefix_reserved_2.prefix
+    prefix_reserved_3_id       = module.prefix_reserved_3.id
+    prefix_reserved_3_prefix   = module.prefix_reserved_3.prefix
+  }
+}
+
+# ====== SUBNETS /26 ======
+output "subnets_26" {
+  description = "Informações das Sub-redes /26"
+  value = {
+    # Produção - 4 sub-redes /26
+    prefix_production_1_id     = module.prefix_production_1.id
+    prefix_production_1_prefix = module.prefix_production_1.prefix
+    prefix_production_2_id     = module.prefix_production_2.id
+    prefix_production_2_prefix = module.prefix_production_2.prefix
+    prefix_production_3_id     = module.prefix_production_3.id
+    prefix_production_3_prefix = module.prefix_production_3.prefix
+    prefix_production_4_id     = module.prefix_production_4.id
+    prefix_production_4_prefix = module.prefix_production_4.prefix
+    
+    # Desenvolvimento - 4 sub-redes /26
+    prefix_development_1_id     = module.prefix_development_1.id
+    prefix_development_1_prefix = module.prefix_development_1.prefix
+    prefix_development_2_id     = module.prefix_development_2.id
+    prefix_development_2_prefix = module.prefix_development_2.prefix
+    prefix_development_3_id     = module.prefix_development_3.id
+    prefix_development_3_prefix = module.prefix_development_3.prefix
+    prefix_development_4_id     = module.prefix_development_4.id
+    prefix_development_4_prefix = module.prefix_development_4.prefix
+    
+    # Staging - 4 sub-redes /26
+    prefix_staging_1_id     = module.prefix_staging_1.id
+    prefix_staging_1_prefix = module.prefix_staging_1.prefix
+    prefix_staging_2_id     = module.prefix_staging_2.id
+    prefix_staging_2_prefix = module.prefix_staging_2.prefix
+    prefix_staging_3_id     = module.prefix_staging_3.id
+    prefix_staging_3_prefix = module.prefix_staging_3.prefix
+    prefix_staging_4_id     = module.prefix_staging_4.id
+    prefix_staging_4_prefix = module.prefix_staging_4.prefix
+    
+    # DMZ - 4 sub-redes /26
+    prefix_dmz_1_id     = module.prefix_dmz_1.id
+    prefix_dmz_1_prefix = module.prefix_dmz_1.prefix
+    prefix_dmz_2_id     = module.prefix_dmz_2.id
+    prefix_dmz_2_prefix = module.prefix_dmz_2.prefix
+    prefix_dmz_3_id     = module.prefix_dmz_3.id
+    prefix_dmz_3_prefix = module.prefix_dmz_3.prefix
+    prefix_dmz_4_id     = module.prefix_dmz_4.id
+    prefix_dmz_4_prefix = module.prefix_dmz_4.prefix
+    
+    # Gerenciamento - 4 sub-redes /26
+    prefix_management_1_id     = module.prefix_management_1.id
+    prefix_management_1_prefix = module.prefix_management_1.prefix
+    prefix_management_2_id     = module.prefix_management_2.id
+    prefix_management_2_prefix = module.prefix_management_2.prefix
+    prefix_management_3_id     = module.prefix_management_3.id
+    prefix_management_3_prefix = module.prefix_management_3.prefix
+    prefix_management_4_id     = module.prefix_management_4.id
+    prefix_management_4_prefix = module.prefix_management_4.prefix
+    
+    # Storage - 4 sub-redes /26
+    prefix_storage_1_id     = module.prefix_storage_1.id
+    prefix_storage_1_prefix = module.prefix_storage_1.prefix
+    prefix_storage_2_id     = module.prefix_storage_2.id
+    prefix_storage_2_prefix = module.prefix_storage_2.prefix
+    prefix_storage_3_id     = module.prefix_storage_3.id
+    prefix_storage_3_prefix = module.prefix_storage_3.prefix
+    prefix_storage_4_id     = module.prefix_storage_4.id
+    prefix_storage_4_prefix = module.prefix_storage_4.prefix
+    
+    # Backup - 4 sub-redes /26
+    prefix_backup_1_id     = module.prefix_backup_1.id
+    prefix_backup_1_prefix = module.prefix_backup_1.prefix
+    prefix_backup_2_id     = module.prefix_backup_2.id
+    prefix_backup_2_prefix = module.prefix_backup_2.prefix
+    prefix_backup_3_id     = module.prefix_backup_3.id
+    prefix_backup_3_prefix = module.prefix_backup_3.prefix
+    prefix_backup_4_id     = module.prefix_backup_4.id
+    prefix_backup_4_prefix = module.prefix_backup_4.prefix
+    
+    # Monitoramento - 4 sub-redes /26
+    prefix_monitoring_1_id     = module.prefix_monitoring_1.id
+    prefix_monitoring_1_prefix = module.prefix_monitoring_1.prefix
+    prefix_monitoring_2_id     = module.prefix_monitoring_2.id
+    prefix_monitoring_2_prefix = module.prefix_monitoring_2.prefix
+    prefix_monitoring_3_id     = module.prefix_monitoring_3.id
+    prefix_monitoring_3_prefix = module.prefix_monitoring_3.prefix
+    prefix_monitoring_4_id     = module.prefix_monitoring_4.id
+    prefix_monitoring_4_prefix = module.prefix_monitoring_4.prefix
   }
 }

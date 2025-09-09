@@ -78,3 +78,11 @@ module "tag_infrastructure" {
   description = "Infrastructure components"
   color_hex   = "00ff00"
 }
+
+module "tag_iac_network" {
+  source = "../../../modules/netbox_tag"
+  
+  name        = "iac_network"
+  description = "Infrastructure as Code - Network resources"
+  color_hex   = "0000ff"
+}
