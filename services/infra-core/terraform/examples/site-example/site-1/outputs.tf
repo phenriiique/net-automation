@@ -239,3 +239,104 @@ output "racks" {
     }
   }
 }
+
+# ====== MANUFACTURERS ======
+output "manufacturers" {
+  description = "Informações dos Manufacturers"
+  value = {
+    manufacturer_dell_id   = module.manufacturer_dell.id
+    manufacturer_dell_name = module.manufacturer_dell.name
+  }
+}
+
+# ====== DEVICE ROLES ======
+output "device_roles" {
+  description = "Informações dos Device Roles"
+  value = {
+    role_switch_id   = module.role_switch.id
+    role_switch_name = module.role_switch.name
+    role_server_id   = module.role_server.id
+    role_server_name = module.role_server.name
+  }
+}
+
+# ====== DEVICE TYPES ======
+output "device_types" {
+  description = "Informações dos Device Types"
+  value = {
+    # Switches
+    device_type_dell_750_id   = module.device_type_dell_750.id
+    device_type_dell_750_model = module.device_type_dell_750.model
+    device_type_dell_n3248te_id   = module.device_type_dell_n3248te.id
+    device_type_dell_n3248te_model = module.device_type_dell_n3248te.model
+    device_type_dell_s5248f_id   = module.device_type_dell_s5248f.id
+    device_type_dell_s5248f_model = module.device_type_dell_s5248f.model
+    
+    # Servidores
+    device_type_dell_r750_balanced_id   = module.device_type_dell_r750_balanced.id
+    device_type_dell_r750_balanced_model = module.device_type_dell_r750_balanced.model
+    device_type_dell_r750_gpu_id   = module.device_type_dell_r750_gpu.id
+    device_type_dell_r750_gpu_model = module.device_type_dell_r750_gpu.model
+    device_type_dell_r750_performance_id   = module.device_type_dell_r750_performance.id
+    device_type_dell_r750_performance_model = module.device_type_dell_r750_performance.model
+  }
+}
+
+# ====== DEVICES - RACK03 ======
+output "devices_rack03" {
+  description = "Informações dos Devices do RACK03"
+  value = {
+    # Switches RACK03
+    device_swt_003_001_id   = module.device_swt_003_001.id
+    device_swt_003_001_name = module.device_swt_003_001.name
+    device_swt_003_002_id   = module.device_swt_003_002.id
+    device_swt_003_002_name = module.device_swt_003_002.name
+    device_swt_003_003_id   = module.device_swt_003_003.id
+    device_swt_003_003_name = module.device_swt_003_003.name
+    device_swt_003_004_id   = module.device_swt_003_004.id
+    device_swt_003_004_name = module.device_swt_003_004.name
+    
+    # Servidores RACK03 - Balanced
+    device_srv_003_001_id   = module.device_srv_003_001.id
+    device_srv_003_001_name = module.device_srv_003_001.name
+    device_srv_003_003_id   = module.device_srv_003_003.id
+    device_srv_003_003_name = module.device_srv_003_003.name
+    device_srv_003_004_id   = module.device_srv_003_004.id
+    device_srv_003_004_name = module.device_srv_003_004.name
+    device_srv_003_005_id   = module.device_srv_003_005.id
+    device_srv_003_005_name = module.device_srv_003_005.name
+    device_srv_003_006_id   = module.device_srv_003_006.id
+    device_srv_003_006_name = module.device_srv_003_006.name
+    device_srv_003_007_id   = module.device_srv_003_007.id
+    device_srv_003_007_name = module.device_srv_003_007.name
+    device_srv_003_008_id   = module.device_srv_003_008.id
+    device_srv_003_008_name = module.device_srv_003_008.name
+    device_srv_003_009_id   = module.device_srv_003_009.id
+    device_srv_003_009_name = module.device_srv_003_009.name
+    device_srv_003_010_id   = module.device_srv_003_010.id
+    device_srv_003_010_name = module.device_srv_003_010.name
+    
+    # Servidores RACK03 - Performance
+    device_srv_003_002_id   = module.device_srv_003_002.id
+    device_srv_003_002_name = module.device_srv_003_002.name
+    device_srv_003_013_id   = module.device_srv_003_013.id
+    device_srv_003_013_name = module.device_srv_003_013.name
+    device_srv_003_014_id   = module.device_srv_003_014.id
+    device_srv_003_014_name = module.device_srv_003_014.name
+    device_srv_003_015_id   = module.device_srv_003_015.id
+    device_srv_003_015_name = module.device_srv_003_015.name
+    device_srv_003_016_id   = module.device_srv_003_016.id
+    device_srv_003_016_name = module.device_srv_003_016.name
+    device_srv_003_017_id   = module.device_srv_003_017.id
+    device_srv_003_017_name = module.device_srv_003_017.name
+    device_srv_003_018_id   = module.device_srv_003_018.id
+    device_srv_003_018_name = module.device_srv_003_018.name
+
+    
+    # Servidores RACK03 - GPU
+    device_srv_003_011_id   = module.device_srv_003_011.id
+    device_srv_003_011_name = module.device_srv_003_011.name
+    device_srv_003_012_id   = module.device_srv_003_012.id
+    device_srv_003_012_name = module.device_srv_003_012.name
+  }
+}
