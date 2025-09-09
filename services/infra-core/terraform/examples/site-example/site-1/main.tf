@@ -20,8 +20,12 @@ locals {
   tenant_name    = "br-ne-1"
   site_name      = "Site Nordeste" 
   description    = "Data center ${local.site_name} - Em planejamento"
-  qtd_rack_units = 22
   base_network   = "10.0"
+  rack_qtd       = 22  # Quantidade de racks a serem criados
+  
+  # Status centralizados - diferentes recursos têm validações diferentes
+  status_site_rack = "planned"  # Para Site e Rack (suportam "planned")
+  status_vlan_prefix = "active" # Para VLAN e Prefix (não suportam "planned")
 }
 
 module "tenant_br-ne-1" {
@@ -37,7 +41,7 @@ module "site_br-ne-1" {
   
   name        = local.site_name
   description = local.description
-  status      = "planned"
+  status      = local.status_site_rack
   tenant_id   = module.tenant_br-ne-1.id
   
 }

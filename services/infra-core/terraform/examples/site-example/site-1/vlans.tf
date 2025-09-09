@@ -8,7 +8,7 @@ module "vlan_100" {
   
   name        = "VLAN 100 - Management"
   vid         = 100
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de gerenciamento para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -21,7 +21,7 @@ module "vlan_101" {
   
   name        = "VLAN 101 - Storage"
   vid         = 101
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de storage para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -34,7 +34,7 @@ module "vlan_102" {
   
   name        = "VLAN 102 - Monitoring"
   vid         = 102
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de monitoramento para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -49,7 +49,7 @@ module "vlan_250" {
   
   name        = "VLAN 250 - Web Production"
   vid         = 250
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de produção web para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -62,7 +62,7 @@ module "vlan_251" {
   
   name        = "VLAN 251 - Database Production"
   vid         = 251
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de banco de dados de produção para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -75,7 +75,7 @@ module "vlan_252" {
   
   name        = "VLAN 252 - API Production"
   vid         = 252
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de API de produção para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -90,7 +90,7 @@ module "vlan_550" {
   
   name        = "VLAN 550 - Web Development"
   vid         = 550
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de desenvolvimento web para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -103,7 +103,7 @@ module "vlan_551" {
   
   name        = "VLAN 551 - Database Development"
   vid         = 551
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de banco de dados de desenvolvimento para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
@@ -116,7 +116,7 @@ module "vlan_552" {
   
   name        = "VLAN 552 - API Development"
   vid         = 552
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "VLAN de API de desenvolvimento para o ${local.site_name}"
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id

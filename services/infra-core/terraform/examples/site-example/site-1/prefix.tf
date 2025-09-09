@@ -113,7 +113,7 @@ module "prefix_infrastructure" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["infrastructure"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de infraestrutura para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -125,7 +125,7 @@ module "prefix_production" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["production"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de produção para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -138,7 +138,7 @@ module "prefix_development" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["development"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de desenvolvimento para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -151,7 +151,7 @@ module "prefix_staging" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["staging"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de staging para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -163,7 +163,7 @@ module "prefix_dmz" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["dmz"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede DMZ para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -175,7 +175,7 @@ module "prefix_management" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["management"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de gerenciamento para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -187,7 +187,7 @@ module "prefix_storage" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["storage"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de storage para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -199,7 +199,7 @@ module "prefix_backup" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["backup"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de backup para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -211,7 +211,7 @@ module "prefix_monitoring" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets["monitoring"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de monitoramento para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -226,7 +226,7 @@ module "prefix_production_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["production_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de produção 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -238,7 +238,7 @@ module "prefix_production_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["production_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de produção 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -250,7 +250,7 @@ module "prefix_production_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["production_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de produção 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -262,7 +262,7 @@ module "prefix_production_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["production_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de produção 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -275,7 +275,7 @@ module "prefix_development_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["development_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de desenvolvimento 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -287,7 +287,7 @@ module "prefix_development_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["development_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de desenvolvimento 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -299,7 +299,7 @@ module "prefix_development_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["development_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de desenvolvimento 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -311,7 +311,7 @@ module "prefix_development_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["development_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de desenvolvimento 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -324,7 +324,7 @@ module "prefix_staging_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["staging_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de staging 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -335,7 +335,7 @@ module "prefix_staging_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["staging_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de staging 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -346,7 +346,7 @@ module "prefix_staging_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["staging_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de staging 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -357,7 +357,7 @@ module "prefix_staging_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["staging_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de staging 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -369,7 +369,7 @@ module "prefix_dmz_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["dmz_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede DMZ 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -380,7 +380,7 @@ module "prefix_dmz_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["dmz_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede DMZ 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -391,7 +391,7 @@ module "prefix_dmz_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["dmz_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede DMZ 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -402,7 +402,7 @@ module "prefix_dmz_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["dmz_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede DMZ 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -414,7 +414,7 @@ module "prefix_management_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["management_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de gerenciamento 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -425,7 +425,7 @@ module "prefix_management_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["management_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de gerenciamento 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -436,7 +436,7 @@ module "prefix_management_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["management_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de gerenciamento 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -447,7 +447,7 @@ module "prefix_management_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["management_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de gerenciamento 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -459,7 +459,7 @@ module "prefix_storage_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["storage_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de storage 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -470,7 +470,7 @@ module "prefix_storage_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["storage_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de storage 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -481,7 +481,7 @@ module "prefix_storage_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["storage_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de storage 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -492,7 +492,7 @@ module "prefix_storage_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["storage_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de storage 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -504,7 +504,7 @@ module "prefix_backup_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["backup_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de backup 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -515,7 +515,7 @@ module "prefix_backup_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["backup_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de backup 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -526,7 +526,7 @@ module "prefix_backup_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["backup_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de backup 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -537,7 +537,7 @@ module "prefix_backup_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["backup_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de backup 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -549,7 +549,7 @@ module "prefix_monitoring_1" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["monitoring_1"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de monitoramento 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -561,7 +561,7 @@ module "prefix_monitoring_2" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["monitoring_2"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de monitoramento 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -573,7 +573,7 @@ module "prefix_monitoring_3" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["monitoring_3"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de monitoramento 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
@@ -585,7 +585,7 @@ module "prefix_monitoring_4" {
   source = "../../../modules/netbox_prefix"
   
   prefix      = local.subnets_26["monitoring_4"]
-  status      = "active"
+  status      = local.status_vlan_prefix
   description = "Rede de monitoramento 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id

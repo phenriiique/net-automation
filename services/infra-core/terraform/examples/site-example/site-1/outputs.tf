@@ -228,3 +228,14 @@ output "subnets_26" {
     prefix_monitoring_4_prefix = module.prefix_monitoring_4.prefix
   }
 }
+
+# ====== RACKS ======
+output "racks" {
+  description = "Informações dos Racks"
+  value = {
+    for i in range(1, local.rack_qtd + 1) : "rack_${format("%02d", i)}" => {
+      id   = netbox_rack.racks[i].id
+      name = netbox_rack.racks[i].name
+    }
+  }
+}
