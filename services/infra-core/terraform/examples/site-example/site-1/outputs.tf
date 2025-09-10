@@ -23,30 +23,30 @@ output "tags" {
   description = "Informações das Tags"
   value = {
     # Tags de Ambiente
-    tag_production_id   = module.tag_production.id
-    tag_production_name = module.tag_production.name
-    tag_development_id  = module.tag_development.id
-    tag_development_name = module.tag_development.name
+    tag_production_id   = data.netbox_tag.tag_production.id
+    tag_production_name = data.netbox_tag.tag_production.name
+    tag_development_id  = data.netbox_tag.tag_development.id
+    tag_development_name = data.netbox_tag.tag_development.name
     
     # Tags de Tipo de Serviço
-    tag_web_id      = module.tag_web.id
-    tag_web_name    = module.tag_web.name
-    tag_database_id = module.tag_database.id
-    tag_database_name = module.tag_database.name
-    tag_api_id      = module.tag_api.id
-    tag_api_name    = module.tag_api.name
+    tag_web_id      = data.netbox_tag.tag_web.id
+    tag_web_name    = data.netbox_tag.tag_web.name
+    tag_database_id = data.netbox_tag.tag_database.id
+    tag_database_name = data.netbox_tag.tag_database.name
+    tag_api_id      = data.netbox_tag.tag_api.id
+    tag_api_name    = data.netbox_tag.tag_api.name
     
     # Tags de Infraestrutura
-    tag_management_id   = module.tag_management.id
-    tag_management_name = module.tag_management.name
-    tag_storage_id      = module.tag_storage.id
-    tag_storage_name    = module.tag_storage.name
-    tag_monitoring_id   = module.tag_monitoring.id
-    tag_monitoring_name = module.tag_monitoring.name
-    tag_infrastructure_id   = module.tag_infrastructure.id
-    tag_infrastructure_name = module.tag_infrastructure.name
-    tag_iac_network_id      = module.tag_iac_network.id
-    tag_iac_network_name    = module.tag_iac_network.name
+    tag_management_id   = data.netbox_tag.tag_management.id
+    tag_management_name = data.netbox_tag.tag_management.name
+    tag_storage_id      = data.netbox_tag.tag_storage.id
+    tag_storage_name    = data.netbox_tag.tag_storage.name
+    tag_monitoring_id   = data.netbox_tag.tag_monitoring.id
+    tag_monitoring_name = data.netbox_tag.tag_monitoring.name
+    tag_infrastructure_id   = data.netbox_tag.tag_infrastructure.id
+    tag_infrastructure_name = data.netbox_tag.tag_infrastructure.name
+    tag_iac_network_id      = data.netbox_tag.tag_iac_network.id
+    tag_iac_network_name    = data.netbox_tag.tag_iac_network.name
   }
 }
 
@@ -244,8 +244,7 @@ output "racks" {
 output "manufacturers" {
   description = "Informações dos Manufacturers"
   value = {
-    manufacturer_dell_id   = module.manufacturer_dell.id
-    manufacturer_dell_name = module.manufacturer_dell.name
+    manufacturer_dell_id   = local.manufacturer_dell_id
   }
 }
 
@@ -253,10 +252,8 @@ output "manufacturers" {
 output "device_roles" {
   description = "Informações dos Device Roles"
   value = {
-    role_switch_id   = module.role_switch.id
-    role_switch_name = module.role_switch.name
-    role_server_id   = module.role_server.id
-    role_server_name = module.role_server.name
+    role_switch_id   = local.role_switch_id
+    role_server_id   = local.role_server_id
   }
 }
 
@@ -265,20 +262,14 @@ output "device_types" {
   description = "Informações dos Device Types"
   value = {
     # Switches
-    device_type_dell_750_id   = module.device_type_dell_750.id
-    device_type_dell_750_model = module.device_type_dell_750.model
-    device_type_dell_n3248te_id   = module.device_type_dell_n3248te.id
-    device_type_dell_n3248te_model = module.device_type_dell_n3248te.model
-    device_type_dell_s5248f_id   = module.device_type_dell_s5248f.id
-    device_type_dell_s5248f_model = module.device_type_dell_s5248f.model
+    device_type_dell_750_id   = local.device_type_dell_750_id
+    device_type_dell_n3248te_id   = local.device_type_dell_n3248te_id
+    device_type_dell_s5248f_id   = local.device_type_dell_s5248f_id
     
     # Servidores
-    device_type_dell_r750_balanced_id   = module.device_type_dell_r750_balanced.id
-    device_type_dell_r750_balanced_model = module.device_type_dell_r750_balanced.model
-    device_type_dell_r750_gpu_id   = module.device_type_dell_r750_gpu.id
-    device_type_dell_r750_gpu_model = module.device_type_dell_r750_gpu.model
-    device_type_dell_r750_performance_id   = module.device_type_dell_r750_performance.id
-    device_type_dell_r750_performance_model = module.device_type_dell_r750_performance.model
+    device_type_dell_r750_balanced_id   = local.device_type_dell_r750_balanced_id
+    device_type_dell_r750_gpu_id   = local.device_type_dell_r750_gpu_id
+    device_type_dell_r750_performance_id   = local.device_type_dell_r750_performance_id
   }
 }
 

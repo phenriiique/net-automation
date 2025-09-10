@@ -13,7 +13,7 @@ module "vlan_100" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_100.id
-  tags        = [module.tag_management.name]
+  tags        = [data.netbox_tag.tag_management.name]
 }
 
 module "vlan_101" {
@@ -26,7 +26,7 @@ module "vlan_101" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_100.id
-  tags        = [module.tag_storage.name]
+  tags        = [data.netbox_tag.tag_storage.name]
 }
 
 module "vlan_102" {
@@ -39,7 +39,7 @@ module "vlan_102" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_100.id
-  tags        = [module.tag_monitoring.name]
+  tags        = [data.netbox_tag.tag_monitoring.name]
 }
 
 # ====== VLANs de Produção (200-299) ======
@@ -54,7 +54,7 @@ module "vlan_250" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_200.id
-  tags        = [module.tag_web.name, module.tag_production.name]
+  tags        = [data.netbox_tag.tag_web.name, data.netbox_tag.tag_production.name]
 }
 
 module "vlan_251" {
@@ -67,7 +67,7 @@ module "vlan_251" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_200.id
-  tags        = [module.tag_database.name, module.tag_production.name]
+  tags        = [data.netbox_tag.tag_database.name, data.netbox_tag.tag_production.name]
 }
 
 module "vlan_252" {
@@ -80,7 +80,7 @@ module "vlan_252" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_200.id
-  tags        = [module.tag_api.name, module.tag_production.name]
+  tags        = [data.netbox_tag.tag_api.name, data.netbox_tag.tag_production.name]
 }
 
 # ====== VLANs de Desenvolvimento (500-599) ======
@@ -95,7 +95,7 @@ module "vlan_550" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_500.id
-  tags        = [module.tag_web.name, module.tag_development.name]
+  tags        = [data.netbox_tag.tag_web.name, data.netbox_tag.tag_development.name]
 }
 
 module "vlan_551" {
@@ -108,7 +108,7 @@ module "vlan_551" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_500.id
-  tags        = [module.tag_database.name, module.tag_development.name]
+  tags        = [data.netbox_tag.tag_database.name, data.netbox_tag.tag_development.name]
 }
 
 module "vlan_552" {
@@ -121,5 +121,5 @@ module "vlan_552" {
   tenant_id   = module.tenant_br-ne-1.id
   site_id     = module.site_br-ne-1.id
   group_id    = module.vlan_group_500.id
-  tags        = [module.tag_api.name, module.tag_development.name]
+  tags        = [data.netbox_tag.tag_api.name, data.netbox_tag.tag_development.name]
 }

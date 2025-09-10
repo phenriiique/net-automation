@@ -15,5 +15,5 @@ resource "netbox_rack" "racks" {
   width     = 19
   u_height  = 47
   tenant_id = module.tenant_br-ne-1.id
-  tags      = [module.tag_iac_network.name]
+  tags      = [data.netbox_tag.tag_iac_network.name]
 }

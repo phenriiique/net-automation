@@ -103,7 +103,7 @@ module "prefix_container_main" {
   description = "Container principal de rede para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # ====== SUBNETS /21 (Filhos) ======
@@ -117,7 +117,7 @@ module "prefix_infrastructure" {
   description = "Rede de infraestrutura para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Produção
@@ -130,7 +130,7 @@ module "prefix_production" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_250.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Desenvolvimento
@@ -143,7 +143,7 @@ module "prefix_development" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_550.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Staging
@@ -155,7 +155,7 @@ module "prefix_staging" {
   description = "Rede de staging para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # DMZ
@@ -167,7 +167,7 @@ module "prefix_dmz" {
   description = "Rede DMZ para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Gerenciamento
@@ -179,7 +179,7 @@ module "prefix_management" {
   description = "Rede de gerenciamento para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Storage
@@ -191,7 +191,7 @@ module "prefix_storage" {
   description = "Rede de storage para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Backup
@@ -203,7 +203,7 @@ module "prefix_backup" {
   description = "Rede de backup para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Monitoramento
@@ -216,7 +216,7 @@ module "prefix_monitoring" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_100.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # ====== SUBNETS /26 (Netos) ======
@@ -231,7 +231,7 @@ module "prefix_production_1" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_250.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_production_2" {
@@ -243,7 +243,7 @@ module "prefix_production_2" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_250.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_production_3" {
@@ -255,7 +255,7 @@ module "prefix_production_3" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_250.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_production_4" {
@@ -267,7 +267,7 @@ module "prefix_production_4" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_250.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Desenvolvimento - 4 sub-redes /26
@@ -280,7 +280,7 @@ module "prefix_development_1" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_550.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_development_2" {
@@ -292,7 +292,7 @@ module "prefix_development_2" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_550.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_development_3" {
@@ -304,7 +304,7 @@ module "prefix_development_3" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_550.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_development_4" {
@@ -316,7 +316,7 @@ module "prefix_development_4" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_550.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Staging - 4 sub-redes /26
@@ -328,7 +328,7 @@ module "prefix_staging_1" {
   description = "Rede de staging 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_staging_2" {
@@ -339,7 +339,7 @@ module "prefix_staging_2" {
   description = "Rede de staging 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_staging_3" {
@@ -350,7 +350,7 @@ module "prefix_staging_3" {
   description = "Rede de staging 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_staging_4" {
@@ -361,7 +361,7 @@ module "prefix_staging_4" {
   description = "Rede de staging 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # DMZ - 4 sub-redes /26
@@ -373,7 +373,7 @@ module "prefix_dmz_1" {
   description = "Rede DMZ 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_dmz_2" {
@@ -384,7 +384,7 @@ module "prefix_dmz_2" {
   description = "Rede DMZ 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_dmz_3" {
@@ -395,7 +395,7 @@ module "prefix_dmz_3" {
   description = "Rede DMZ 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_dmz_4" {
@@ -406,7 +406,7 @@ module "prefix_dmz_4" {
   description = "Rede DMZ 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Gerenciamento - 4 sub-redes /26
@@ -418,7 +418,7 @@ module "prefix_management_1" {
   description = "Rede de gerenciamento 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_management_2" {
@@ -429,7 +429,7 @@ module "prefix_management_2" {
   description = "Rede de gerenciamento 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_management_3" {
@@ -440,7 +440,7 @@ module "prefix_management_3" {
   description = "Rede de gerenciamento 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_management_4" {
@@ -451,7 +451,7 @@ module "prefix_management_4" {
   description = "Rede de gerenciamento 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Storage - 4 sub-redes /26
@@ -463,7 +463,7 @@ module "prefix_storage_1" {
   description = "Rede de storage 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_storage_2" {
@@ -474,7 +474,7 @@ module "prefix_storage_2" {
   description = "Rede de storage 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_storage_3" {
@@ -485,7 +485,7 @@ module "prefix_storage_3" {
   description = "Rede de storage 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_storage_4" {
@@ -496,7 +496,7 @@ module "prefix_storage_4" {
   description = "Rede de storage 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Backup - 4 sub-redes /26
@@ -508,7 +508,7 @@ module "prefix_backup_1" {
   description = "Rede de backup 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_backup_2" {
@@ -519,7 +519,7 @@ module "prefix_backup_2" {
   description = "Rede de backup 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_backup_3" {
@@ -530,7 +530,7 @@ module "prefix_backup_3" {
   description = "Rede de backup 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_backup_4" {
@@ -541,7 +541,7 @@ module "prefix_backup_4" {
   description = "Rede de backup 4 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # Monitoramento - 4 sub-redes /26
@@ -554,7 +554,7 @@ module "prefix_monitoring_1" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_100.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_monitoring_2" {
@@ -566,7 +566,7 @@ module "prefix_monitoring_2" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_100.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_monitoring_3" {
@@ -578,7 +578,7 @@ module "prefix_monitoring_3" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_100.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_monitoring_4" {
@@ -590,7 +590,7 @@ module "prefix_monitoring_4" {
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
   vlan_id     = module.vlan_100.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 # ====== PREFIXOS RESERVADOS ======
@@ -604,7 +604,7 @@ module "prefix_reserved_1" {
   description = "Prefixo reservado 1 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_reserved_2" {
@@ -615,7 +615,7 @@ module "prefix_reserved_2" {
   description = "Prefixo reservado 2 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
 
 module "prefix_reserved_3" {
@@ -626,5 +626,5 @@ module "prefix_reserved_3" {
   description = "Prefixo reservado 3 para o ${local.site_name}"
   site_id     = module.site_br-ne-1.id
   tenant_id   = module.tenant_br-ne-1.id
-  tags        = [module.tag_iac_network.name]
+  tags        = [data.netbox_tag.tag_iac_network.name]
 }
