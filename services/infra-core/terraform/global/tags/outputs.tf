@@ -1,97 +1,15 @@
 # Outputs das Tags Globais
 # Este arquivo expõe os IDs das tags para uso em outros diretórios
 
-# ====== Tags de Ambiente ======
-output "tag_production_id" {
-  description = "ID da tag production"
-  value       = module.tag_production.id
-}
-
-output "tag_production_name" {
-  description = "Nome da tag production"
-  value       = module.tag_production.name
-}
-
-output "tag_development_id" {
-  description = "ID da tag development"
-  value       = module.tag_development.id
-}
-
-output "tag_development_name" {
-  description = "Nome da tag development"
-  value       = module.tag_development.name
-}
-
-# ====== Tags de Tipo de Serviço ======
-output "tag_web_id" {
-  description = "ID da tag web"
-  value       = module.tag_web.id
-}
-
-output "tag_web_name" {
-  description = "Nome da tag web"
-  value       = module.tag_web.name
-}
-
-output "tag_database_id" {
-  description = "ID da tag database"
-  value       = module.tag_database.id
-}
-
-output "tag_database_name" {
-  description = "Nome da tag database"
-  value       = module.tag_database.name
-}
-
-output "tag_api_id" {
-  description = "ID da tag api"
-  value       = module.tag_api.id
-}
-
-output "tag_api_name" {
-  description = "Nome da tag api"
-  value       = module.tag_api.name
-}
-
 # ====== Tags de Infraestrutura ======
 output "tag_management_id" {
-  description = "ID da tag management"
+  description = "ID da tag interface_management"
   value       = module.tag_management.id
 }
 
 output "tag_management_name" {
-  description = "Nome da tag management"
+  description = "Nome da tag interface_management"
   value       = module.tag_management.name
-}
-
-output "tag_storage_id" {
-  description = "ID da tag storage"
-  value       = module.tag_storage.id
-}
-
-output "tag_storage_name" {
-  description = "Nome da tag storage"
-  value       = module.tag_storage.name
-}
-
-output "tag_monitoring_id" {
-  description = "ID da tag monitoring"
-  value       = module.tag_monitoring.id
-}
-
-output "tag_monitoring_name" {
-  description = "Nome da tag monitoring"
-  value       = module.tag_monitoring.name
-}
-
-output "tag_infrastructure_id" {
-  description = "ID da tag infrastructure"
-  value       = module.tag_infrastructure.id
-}
-
-output "tag_infrastructure_name" {
-  description = "Nome da tag infrastructure"
-  value       = module.tag_infrastructure.name
 }
 
 output "tag_iac_network_id" {
@@ -102,4 +20,136 @@ output "tag_iac_network_id" {
 output "tag_iac_network_name" {
   description = "Nome da tag iac_network"
   value       = module.tag_iac_network.name
+}
+
+# ====== Tags de Switches ======
+output "tag_switch_dados_id" {
+  description = "ID da tag switch_dados"
+  value       = module.tag_switch_dados.id
+}
+
+output "tag_switch_dados_name" {
+  description = "Nome da tag switch_dados"
+  value       = module.tag_switch_dados.name
+}
+
+output "tag_switch_dados_a_id" {
+  description = "ID da tag switch_dados_a"
+  value       = module.tag_switch_dados_a.id
+}
+
+output "tag_switch_dados_a_name" {
+  description = "Nome da tag switch_dados_a"
+  value       = module.tag_switch_dados_a.name
+}
+
+output "tag_switch_dados_b_id" {
+  description = "ID da tag switch_dados_b"
+  value       = module.tag_switch_dados_b.id
+}
+
+output "tag_switch_dados_b_name" {
+  description = "Nome da tag switch_dados_b"
+  value       = module.tag_switch_dados_b.name
+}
+
+output "tag_switch_oam_id" {
+  description = "ID da tag switch_oam"
+  value       = module.tag_switch_oam.id
+}
+
+output "tag_switch_oam_name" {
+  description = "Nome da tag switch_oam"
+  value       = module.tag_switch_oam.name
+}
+
+output "tag_switch_oam_a_id" {
+  description = "ID da tag switch_oam_a"
+  value       = module.tag_switch_oam_a.id
+}
+
+output "tag_switch_oam_a_name" {
+  description = "Nome da tag switch_oam_a"
+  value       = module.tag_switch_oam_a.name
+}
+
+output "tag_switch_oam_b_id" {
+  description = "ID da tag switch_oam_b"
+  value       = module.tag_switch_oam_b.id
+}
+
+output "tag_switch_oam_b_name" {
+  description = "Nome da tag switch_oam_b"
+  value       = module.tag_switch_oam_b.name
+}
+
+# ====== Tags de Interfaces ======
+output "tag_interface_data_slot_1_1_id" {
+  description = "ID da tag interface_data_slot_1-1"
+  value       = module.tag_interface_data_slot_1_1.id
+}
+
+output "tag_interface_data_slot_1_1_name" {
+  description = "Nome da tag interface_data_slot_1-1"
+  value       = module.tag_interface_data_slot_1_1.name
+}
+
+output "tag_interface_data_slot_1_2_id" {
+  description = "ID da tag interface_data_slot_1-2"
+  value       = module.tag_interface_data_slot_1_2.id
+}
+
+output "tag_interface_data_slot_1_2_name" {
+  description = "Nome da tag interface_data_slot_1-2"
+  value       = module.tag_interface_data_slot_1_2.name
+}
+
+output "tag_interface_data_slot_2_1_id" {
+  description = "ID da tag interface_data_slot_2-1"
+  value       = module.tag_interface_data_slot_2_1.id
+}
+
+output "tag_interface_data_slot_2_1_name" {
+  description = "Nome da tag interface_data_slot_2-1"
+  value       = module.tag_interface_data_slot_2_1.name
+}
+
+output "tag_interface_data_slot_2_2_id" {
+  description = "ID da tag interface_data_slot_2-2"
+  value       = module.tag_interface_data_slot_2_2.id
+}
+
+output "tag_interface_data_slot_2_2_name" {
+  description = "Nome da tag interface_data_slot_2-2"
+  value       = module.tag_interface_data_slot_2_2.name
+}
+
+output "tag_interface_oam_slot_2_2_id" {
+  description = "ID da tag interface_oam_slot_2-2"
+  value       = module.tag_interface_oam_slot_2_2.id
+}
+
+output "tag_interface_oam_slot_2_2_name" {
+  description = "Nome da tag interface_oam_slot_2-2"
+  value       = module.tag_interface_oam_slot_2_2.name
+}
+
+output "tag_interface_oam_2_2_id" {
+  description = "ID da tag interface_oam_2-2"
+  value       = module.tag_interface_oam_2_2.id
+}
+
+output "tag_interface_oam_2_2_name" {
+  description = "Nome da tag interface_oam_2-2"
+  value       = module.tag_interface_oam_2_2.name
+}
+
+output "tag_interface_bmc_id" {
+  description = "ID da tag interface_bmc"
+  value       = module.tag_interface_bmc.id
+}
+
+output "tag_interface_bmc_name" {
+  description = "Nome da tag interface_bmc"
+  value       = module.tag_interface_bmc.name
 }
