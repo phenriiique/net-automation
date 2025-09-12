@@ -11,7 +11,7 @@ O sistema de racks globais permite criar e gerenciar racks de forma centralizada
 ### Estrutura de Arquivos
 
 ```
-global/racks/
+global/04-racks/
 ├── README.md              # Este arquivo
 ├── providers.tf           # Configuração do provider Netbox
 ├── variables.tf           # Variáveis do módulo
@@ -166,7 +166,7 @@ module "device_srv_003_001" {
 
 ```bash
 # Navegar para o diretório
-cd services/infra-core/terraform/global/racks
+cd services/infra-core/terraform/global/04-racks
 
 # Inicializar Terraform
 terraform init
@@ -182,7 +182,7 @@ terraform apply
 
 ```hcl
 module "racks_global" {
-  source = "../../../global/racks"
+  source = "../../../global/04-racks"
   
   # Variáveis do site
   rack_qtd = 22
@@ -231,10 +231,10 @@ output "rack03_summary" {
 
 ### Ordem de Execução
 
-1. **Global Tags** → Cria tags globais
-2. **Global Device Types** → Cria manufacturers, roles e device types
-3. **Site-1** → Cria site e tenant
-4. **Global Racks** → Cria racks e popula devices
+1. **Global Tags (00-tags)** → Cria tags globais
+2. **Global Device Types (01-device_types)** → Cria manufacturers, roles e device types
+3. **Site-1 (03-site-1)** → Cria site e tenant
+4. **Global Racks (04-racks)** → Cria racks e popula devices
 
 ### Data Sources Dependentes
 
@@ -292,7 +292,7 @@ output "rack03_summary" {
 
 **Causa**: Device type ou role não existe.
 
-**Solução**: Executar `global/device_types` antes de `global/racks`.
+**Solução**: Executar `global/01-device_types` antes de `global/04-racks`.
 
 ### Erro: "Cannot select a rack face without assigning a rack"
 

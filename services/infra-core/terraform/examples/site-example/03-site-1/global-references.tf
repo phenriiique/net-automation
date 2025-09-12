@@ -1,20 +1,20 @@
 # Referências aos Recursos Globais
 # Este arquivo referencia os outputs dos diretórios globais
 
-# Usando terraform_remote_state para referenciar o estado do diretório global/device_types
+# Usando terraform_remote_state para referenciar o estado do diretório global/01-device_types
 data "terraform_remote_state" "global_device_types" {
   backend = "local"
   config = {
-    path = "../../../global/device_types/terraform.tfstate"
+    path = "../../../global/01-device_types/terraform.tfstate"
   }
 }
 
-# Usando terraform_remote_state para referenciar o estado do diretório global/racks
+# Usando terraform_remote_state para referenciar o estado do diretório global/04-racks
 # Comentado temporariamente - usando módulo diretamente
 # data "terraform_remote_state" "global_racks" {
 #   backend = "local"
 #   config = {
-#     path = "../../../global/racks/terraform.tfstate"
+#     path = "../../../global/04-racks/terraform.tfstate"
 #   }
 # }
 
@@ -28,7 +28,6 @@ locals {
   role_server_id = data.terraform_remote_state.global_device_types.outputs.role_server_id
   
   # IDs dos device types globais
-  device_type_dell_750_id = data.terraform_remote_state.global_device_types.outputs.device_type_dell_750_id
   device_type_dell_n3248te_id = data.terraform_remote_state.global_device_types.outputs.device_type_dell_n3248te_id
   device_type_dell_s5248f_id = data.terraform_remote_state.global_device_types.outputs.device_type_dell_s5248f_id
   device_type_dell_r750_balanced_id = data.terraform_remote_state.global_device_types.outputs.device_type_dell_r750_balanced_id

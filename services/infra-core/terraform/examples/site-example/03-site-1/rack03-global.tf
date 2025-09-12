@@ -2,7 +2,7 @@
 # Este arquivo instancia os racks globais no contexto do site-1
 
 # module "racks_global" {
-#   source = "../../../global/racks"
+#   source = "../../../global/04-racks"
   
 #   # Variáveis do site-1
 #   rack_qtd = local.rack_qtd

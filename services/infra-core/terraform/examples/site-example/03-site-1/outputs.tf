@@ -152,7 +152,6 @@ output "device_types" {
   description = "Informações dos Device Types"
   value = {
     # Switches
-    device_type_dell_750_id   = local.device_type_dell_750_id
     device_type_dell_n3248te_id   = local.device_type_dell_n3248te_id
     device_type_dell_s5248f_id   = local.device_type_dell_s5248f_id
     
