@@ -34,16 +34,6 @@ output "role_server_name" {
 }
 
 # ====== DEVICE TYPES ======
-output "device_type_dell_750_id" {
-  description = "ID do device type Dell 750"
-  value       = module.device_type_dell_750.id
-}
-
-output "device_type_dell_750_model" {
-  description = "Modelo do device type Dell 750"
-  value       = module.device_type_dell_750.model
-}
-
 output "device_type_dell_n3248te_id" {
   description = "ID do device type Dell N3248TE"
   value       = module.device_type_dell_n3248te.id

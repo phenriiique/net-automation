@@ -1,5 +1,120 @@
 # DELL R750 GPU - Device Type e Interface Templates
-# Servidor Dell R750 com GPU L40
+# Servidor Dell R750 com GPU L40 e interfaces de rede
+# Especificações:
+# - IDRAC (gerenciamento)
+# - SLOT-0-NIC1-1/2: 1000BASE-T (1GE)
+# - SLOT-3-NIC1-1/2: SFP28 (25GE)
+# - SLOT-6-NIC1-1/2: SFP28 (25GE)
+# - SLOT-9-NIC1-1/2/3/4: 1000BASE-T (1GE)
+
+# Local variables para interfaces do R750 GPU
+locals {
+  # Interface IDRAC (gerenciamento)
+  r750_gpu_idrac_interfaces = {
+    "idrac" = {
+      name        = "IDRAC"
+      type        = "1000base-t"
+      mgmt_only   = true
+      description = "Interface IDRAC (gerenciamento)"
+      label       = "IDRAC"
+    }
+  }
+  
+  # SLOT-0-NIC1-1/2: 1000BASE-T (1GE)
+  r750_gpu_slot0_interfaces = {
+    "slot0_nic1_1" = {
+      name        = "SLOT-0-NIC1-1"
+      type        = "1000base-t"
+      mgmt_only   = false
+      description = "SLOT-0-NIC1-1 - 1000BASE-T (1GE)"
+      label       = "SLOT-0-NIC1-1"
+    }
+    "slot0_nic1_2" = {
+      name        = "SLOT-0-NIC1-2"
+      type        = "1000base-t"
+      mgmt_only   = false
+      description = "SLOT-0-NIC1-2 - 1000BASE-T (1GE)"
+      label       = "SLOT-0-NIC1-2"
+    }
+  }
+  
+  # SLOT-3-NIC1-1/2: SFP28 (25GE)
+  r750_gpu_slot3_interfaces = {
+    "slot3_nic1_1" = {
+      name        = "SLOT-3-NIC1-1"
+      type        = "25gbase-x-sfp28"
+      mgmt_only   = false
+      description = "SLOT-3-NIC1-1 - SFP28 (25GE)"
+      label       = "SLOT-3-NIC1-1"
+    }
+    "slot3_nic1_2" = {
+      name        = "SLOT-3-NIC1-2"
+      type        = "25gbase-x-sfp28"
+      mgmt_only   = false
+      description = "SLOT-3-NIC1-2 - SFP28 (25GE)"
+      label       = "SLOT-3-NIC1-2"
+    }
+  }
+  
+  # SLOT-6-NIC1-1/2: SFP28 (25GE)
+  r750_gpu_slot6_interfaces = {
+    "slot6_nic1_1" = {
+      name        = "SLOT-6-NIC1-1"
+      type        = "25gbase-x-sfp28"
+      mgmt_only   = false
+      description = "SLOT-6-NIC1-1 - SFP28 (25GE)"
+      label       = "SLOT-6-NIC1-1"
+    }
+    "slot6_nic1_2" = {
+      name        = "SLOT-6-NIC1-2"
+      type        = "25gbase-x-sfp28"
+      mgmt_only   = false
+      description = "SLOT-6-NIC1-2 - SFP28 (25GE)"
+      label       = "SLOT-6-NIC1-2"
+    }
+  }
+  
+  # SLOT-9-NIC1-1/2/3/4: 1000BASE-T (1GE)
+  r750_gpu_slot9_interfaces = {
+    "slot9_nic1_1" = {
+      name        = "SLOT-9-NIC1-1"
+      type        = "1000base-t"
+      mgmt_only   = false
+      description = "SLOT-9-NIC1-1 - 1000BASE-T (1GE)"
+      label       = "SLOT-9-NIC1-1"
+    }
+    "slot9_nic1_2" = {
+      name        = "SLOT-9-NIC1-2"
+      type        = "1000base-t"
+      mgmt_only   = false
+      description = "SLOT-9-NIC1-2 - 1000BASE-T (1GE)"
+      label       = "SLOT-9-NIC1-2"
+    }
+    "slot9_nic1_3" = {
+      name        = "SLOT-9-NIC1-3"
+      type        = "1000base-t"
+      mgmt_only   = false
+      description = "SLOT-9-NIC1-3 - 1000BASE-T (1GE)"
+      label       = "SLOT-9-NIC1-3"
+    }
+    "slot9_nic1_4" = {
+      name        = "SLOT-9-NIC1-4"
+      type        = "1000base-t"
+      mgmt_only   = false
+      description = "SLOT-9-NIC1-4 - 1000BASE-T (1GE)"
+      label       = "SLOT-9-NIC1-4"
+    }
+  }
+  
+  # Todas as interfaces combinadas
+  r750_gpu_all_interfaces = merge(
+    local.r750_gpu_idrac_interfaces,
+    local.r750_gpu_slot0_interfaces,
+    local.r750_gpu_slot3_interfaces,
+    local.r750_gpu_slot6_interfaces,
+    local.r750_gpu_slot9_interfaces
+  )
+}
 
 # ====== DEVICE TYPE ======
 
@@ -11,43 +126,21 @@ module "device_type_dell_r750_gpu" {
   part_number     = "DELL-R750-GPU"
   u_height        = 2
   is_full_depth   = true
-  description     = "Servidor Dell R750 com GPU L40"
+  description     = "Servidor Dell R750 com GPU L40 - 2U Rack Server"
 }
 
 # ====== INTERFACE TEMPLATES ======
 
-# Interface de gerenciamento
-module "interface_template_dell_r750_gpu_mgmt" {
+# Geração automática de todas as interfaces
+module "interface_templates_dell_r750_gpu" {
   source = "../../modules/netbox_interface_template"
   
-  device_type_id = module.device_type_dell_r750_gpu.id
-  name           = "mgmt0"
-  type           = "1000base-t"
-  mgmt_only      = true
-  description    = "Interface de gerenciamento"
-  label          = "Management"
-}
-
-# Interface Ethernet 0
-module "interface_template_dell_r750_gpu_eth0" {
-  source = "../../modules/netbox_interface_template"
+  for_each = local.r750_gpu_all_interfaces
   
   device_type_id = module.device_type_dell_r750_gpu.id
-  name           = "eth0"
-  type           = "1000base-t"
-  mgmt_only      = false
-  description    = "Interface Ethernet 0"
-  label          = "Ethernet 0"
-}
-
-# Interface Ethernet 1
-module "interface_template_dell_r750_gpu_eth1" {
-  source = "../../modules/netbox_interface_template"
-  
-  device_type_id = module.device_type_dell_r750_gpu.id
-  name           = "eth1"
-  type           = "1000base-t"
-  mgmt_only      = false
-  description    = "Interface Ethernet 1"
-  label          = "Ethernet 1"
+  name           = each.value.name
+  type           = each.value.type
+  mgmt_only      = each.value.mgmt_only
+  description    = each.value.description
+  label          = each.value.label
 }
