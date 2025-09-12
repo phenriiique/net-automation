@@ -18,7 +18,7 @@ module "device_swt_003_004" {
   status         = var.status
   tenant_id      = local.tenant_id
   description    = "Switch S5248F - RACK03 U43-U44"
-  tags           = [local.tag_iac_network]
+  tags           = [local.tag_iac_network, local.tag_switch_dados, local.tag_switch_dados_a]
 }
 
 # U41-U42 - SWT - S5248F
@@ -35,7 +35,7 @@ module "device_swt_003_003" {
   status         = var.status
   tenant_id      = local.tenant_id
   description    = "Switch S5248F - RACK03 U41-U42"
-  tags           = [local.tag_iac_network]
+  tags           = [local.tag_iac_network, local.tag_switch_dados, local.tag_switch_dados_b]
 }
 
 # U39-U40 - SWT - N3248TE
@@ -52,7 +52,7 @@ module "device_swt_003_002" {
   status         = var.status
   tenant_id      = local.tenant_id
   description    = "Switch N3248TE - RACK03 U39-U40"
-  tags           = [local.tag_iac_network]
+  tags           = [local.tag_iac_network , local.tag_switch_oam, local.tag_switch_oam_a]
 }
 
 # U37-U38 - SWT - N3248TE
@@ -69,7 +69,7 @@ module "device_swt_003_001" {
   status         = var.status
   tenant_id      = local.tenant_id
   description    = "Switch N3248TE - RACK03 U37-U38"
-  tags           = [local.tag_iac_network]
+  tags           = [local.tag_iac_network, local.tag_switch_oam, local.tag_switch_oam_b]
 }
 
 # ====== SERVIDORES - PERFORMANCE ======
