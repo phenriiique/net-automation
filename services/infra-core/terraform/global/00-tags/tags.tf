@@ -23,6 +23,38 @@ module "tag_iac_network" {
   color_hex   = "0000ff"
 }
 
+module "tag_network" {
+  source = "../../modules/netbox_tag"
+  
+  name        = "network"
+  description = "Network infrastructure resources"
+  color_hex   = "0080ff"
+}
+
+module "tag_data" {
+  source = "../../modules/netbox_tag"
+  
+  name        = "data"
+  description = "Data network interfaces"
+  color_hex   = "00ff00"
+}
+
+module "tag_oam" {
+  source = "../../modules/netbox_tag"
+  
+  name        = "oam"
+  description = "OAM (Operations, Administration and Maintenance) interfaces"
+  color_hex   = "ff6600"
+}
+
+module "tag_management_interfaces" {
+  source = "../../modules/netbox_tag"
+  
+  name        = "management"
+  description = "Management interfaces"
+  color_hex   = "ff0000"
+}
+
 # ====== Tags de Switches ======
 
 module "tag_switch_dados" {

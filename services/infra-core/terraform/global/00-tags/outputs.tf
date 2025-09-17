@@ -22,6 +22,46 @@ output "tag_iac_network_name" {
   value       = module.tag_iac_network.name
 }
 
+output "tag_network_id" {
+  description = "ID da tag network"
+  value       = module.tag_network.id
+}
+
+output "tag_network_name" {
+  description = "Nome da tag network"
+  value       = module.tag_network.name
+}
+
+output "tag_data_id" {
+  description = "ID da tag data"
+  value       = module.tag_data.id
+}
+
+output "tag_data_name" {
+  description = "Nome da tag data"
+  value       = module.tag_data.name
+}
+
+output "tag_oam_id" {
+  description = "ID da tag oam"
+  value       = module.tag_oam.id
+}
+
+output "tag_oam_name" {
+  description = "Nome da tag oam"
+  value       = module.tag_oam.name
+}
+
+output "tag_management_interfaces_id" {
+  description = "ID da tag management"
+  value       = module.tag_management_interfaces.id
+}
+
+output "tag_management_interfaces_name" {
+  description = "Nome da tag management"
+  value       = module.tag_management_interfaces.name
+}
+
 # ====== Tags de Switches ======
 output "tag_switch_dados_id" {
   description = "ID da tag switch_dados"

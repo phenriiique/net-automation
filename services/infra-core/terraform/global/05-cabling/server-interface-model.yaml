@@ -1,0 +1,55 @@
+# Modelo YAML para definição de interfaces de servidores
+# Este arquivo define as interfaces que devem ser cabeadas para diferentes tipos de servidores
+
+# Servidor Dell R750 Balanced
+dell-r750-srv009-balanced:
+  oam:
+    SLOT-0-NIC1-1:
+    SLOT-0-NIC1-2:
+  
+  data1:
+    SLOT-6-NIC1-1:
+    SLOT-6-NIC1-2:
+  
+  data2:
+    SLOT-7-NIC1-1:
+    SLOT-7-NIC1-2:
+  
+  bmc:
+    IDRAC:
+
+# Servidor Dell R750 GPU
+dell-r750-srv00a-gpu-l40:
+  oam:
+    SLOT-0-NIC1-1:
+    SLOT-0-NIC1-2:
+  
+  data1:
+    SLOT-3-NIC1-1:
+    SLOT-3-NIC1-2:
+  
+  data2:
+    SLOT-6-NIC1-1:
+    SLOT-6-NIC1-2:
+  
+  bmc:
+    IDRAC:
+
+# Servidor Dell R750 Performance
+dell-r750-srv013-performance:
+  oam:
+    SLOT-0-NIC1-1:
+    SLOT-0-NIC1-2:
+  
+  data1:
+    SLOT-3-NIC1-1:
+    SLOT-3-NIC1-2:
+  
+  data2:
+    SLOT-6-NIC1-1:
+    SLOT-6-NIC1-2:
+  
+  bmc:
+    IDRAC:
+
+

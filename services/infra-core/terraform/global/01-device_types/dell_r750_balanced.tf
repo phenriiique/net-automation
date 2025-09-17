@@ -15,8 +15,7 @@ locals {
       name        = "IDRAC"
       type        = "1000base-t"
       mgmt_only   = true
-      description = "Interface IDRAC (gerenciamento)"
-      label       = "IDRAC"
+      label       = "BMC"
     }
   }
   
@@ -26,15 +25,13 @@ locals {
       name        = "SLOT-0-NIC1-1"
       type        = "1000base-t"
       mgmt_only   = false
-      description = "SLOT-0-NIC1-1 - 1000BASE-T (1GE)"
-      label       = "SLOT-0-NIC1-1"
+      label       = "OAM1"
     }
     "slot0_nic1_2" = {
       name        = "SLOT-0-NIC1-2"
       type        = "1000base-t"
       mgmt_only   = false
-      description = "SLOT-0-NIC1-2 - 1000BASE-T (1GE)"
-      label       = "SLOT-0-NIC1-2"
+      label       = "OAM2"
     }
   }
   
@@ -44,15 +41,13 @@ locals {
       name        = "SLOT-6-NIC1-1"
       type        = "25gbase-x-sfp28"
       mgmt_only   = false
-      description = "SLOT-6-NIC1-1 - SFP28 (25GE)"
-      label       = "SLOT-6-NIC1-1"
+      label       = "DATA1-1"
     }
     "slot6_nic1_2" = {
       name        = "SLOT-6-NIC1-2"
       type        = "25gbase-x-sfp28"
       mgmt_only   = false
-      description = "SLOT-6-NIC1-2 - SFP28 (25GE)"
-      label       = "SLOT-6-NIC1-2"
+      label       = "DATA1-2"
     }
   }
   
@@ -62,15 +57,13 @@ locals {
       name        = "SLOT-7-NIC1-1"
       type        = "25gbase-x-sfp28"
       mgmt_only   = false
-      description = "SLOT-7-NIC1-1 - SFP28 (25GE)"
-      label       = "SLOT-7-NIC1-1"
+      label       = "DATA2-1"
     }
     "slot7_nic1_2" = {
       name        = "SLOT-7-NIC1-2"
       type        = "25gbase-x-sfp28"
       mgmt_only   = false
-      description = "SLOT-7-NIC1-2 - SFP28 (25GE)"
-      label       = "SLOT-7-NIC1-2"
+      label       = "DATA2-2"
     }
   }
   
@@ -80,29 +73,25 @@ locals {
       name        = "SLOT-9-NIC1-1"
       type        = "1000base-t"
       mgmt_only   = false
-      description = "SLOT-9-NIC1-1 - 1000BASE-T (1GE)"
-      label       = "SLOT-9-NIC1-1"
+      label       = "DATA3-1"
     }
     "slot9_nic1_2" = {
       name        = "SLOT-9-NIC1-2"
       type        = "1000base-t"
       mgmt_only   = false
-      description = "SLOT-9-NIC1-2 - 1000BASE-T (1GE)"
-      label       = "SLOT-9-NIC1-2"
+      label       = "DATA3-2"
     }
     "slot9_nic1_3" = {
       name        = "SLOT-9-NIC1-3"
       type        = "1000base-t"
       mgmt_only   = false
-      description = "SLOT-9-NIC1-3 - 1000BASE-T (1GE)"
-      label       = "SLOT-9-NIC1-3"
+      label       = "DATA3-3"
     }
     "slot9_nic1_4" = {
       name        = "SLOT-9-NIC1-4"
       type        = "1000base-t"
       mgmt_only   = false
-      description = "SLOT-9-NIC1-4 - 1000BASE-T (1GE)"
-      label       = "SLOT-9-NIC1-4"
+      label       = "DATA3-4"
     }
   }
   
@@ -141,6 +130,5 @@ module "interface_templates_dell_r750_balanced" {
   name           = each.value.name
   type           = each.value.type
   mgmt_only      = each.value.mgmt_only
-  description    = each.value.description
   label          = each.value.label
 }

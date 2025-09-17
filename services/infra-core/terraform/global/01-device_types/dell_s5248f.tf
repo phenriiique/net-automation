@@ -25,7 +25,7 @@ locals {
       type        = "25gbase-x-sfp28"
       mgmt_only   = false
       description = "Porta SFP28 25 GbE 0/${i}"
-      label       = "25GE 0/${i}"
+      label       = "Eth 1/1/${i}"
     }
   }
   

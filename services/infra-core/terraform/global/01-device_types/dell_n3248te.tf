@@ -37,7 +37,7 @@ locals {
       type        = "10gbase-x-sfpp"
       mgmt_only   = false
       description = "Porta SFP+ 10 GbE 1/0/${i}"
-      label       = "10GE 1/0/${i}"
+      label       = "Eth 1/1/${i}"
     }
   }
   
